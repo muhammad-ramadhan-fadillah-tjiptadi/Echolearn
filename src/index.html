@@ -22,72 +22,72 @@
   </head>
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg bg-success fixed-top">
-        <div class="container-fluid">
-          <!-- Logo di Kiri -->
-          <i class="fa-solid fa-leaf"></i>
-          <a class="navbar-brand ms-2 fw-semibold text-white" href="#"
-            >Ecolearn</a
-          >
+      <nav class="custom-nav navbar navbar-expand-lg fixed-top border-bottom border-2">
+      <div class="container-fluid">
+        <!-- Logo di Kiri -->
+        <i class="fa-solid fa-leaf"></i>
+        <a class="navbar-brand ms-2 fw-semibold text-white" href="#"
+        >Ecolearn</a
+        >
 
-          <!-- Tombol Toggler untuk Mobile -->
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarNavDropdown"
-            aria-controls="navbarNavDropdown"
+        <!-- Tombol Toggler untuk Mobile -->
+        <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+        >
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar ke Kanan -->
+        <div
+        class="collapse navbar-collapse mt-1 me-5"
+        id="navbarNavDropdown"
+        >
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+          <a
+            class="nav-link active fw-semibold text-white"
+            aria-current="page"
+            href="index.html"
+            >Home</a
+          >
+          </li>
+          <li class="nav-item">
+          <a class="nav-link fw-semibold text-white" href="article.html"
+            >Article</a
+          >
+          </li>
+          <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle fw-semibold text-white"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
             aria-expanded="false"
-            aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-
-          <!-- Navbar ke Kanan -->
-          <div
-            class="collapse navbar-collapse mt-1 me-5"
-            id="navbarNavDropdown"
-          >
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <a
-                  class="nav-link active fw-semibold text-white"
-                  aria-current="page"
-                  href="index.html"
-                  >Home</a
-                >
-              </li>
-              <li class="nav-item">
-                <a class="nav-link fw-semibold text-white" href="article.html"
-                  >Article</a
-                >
-              </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle fw-semibold text-white"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Fitur lain
-                </a>
-                <ul class="dropdown-menu">
-                  <li>
-                    <a class="dropdown-item fw-semibold" href="kalkulator.html"
-                      >Kalkulator</a
-                    >
-                  </li>
-                  <li>
-                    <a class="dropdown-item fw-semibold" href="tips-trick.html"
-                      >Tips and Trick</a
-                    >
-                  </li>
-                </ul>
-              </li>
-            </ul>
-          </div>
+            Fitur lain
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+            <a class="dropdown-item fw-semibold" href="kalkulator.html"
+              >Kalkulator</a
+            >
+            </li>
+            <li>
+            <a class="dropdown-item fw-semibold" href="tips-trick.html"
+              >Tips and Trick</a
+            >
+            </li>
+          </ul>
+          </li>
+        </ul>
         </div>
+      </div>
       </nav>
     </header>
     <main>
@@ -98,71 +98,87 @@
           <h1 class="display-1 fw-bold">Ecolearn</h1>
           <p class="fs-3">Edukasi adalah kunci perubahan.</p>
           <p class="fs-3">
-            Dengan EcoLearn, mari kita bangun kebiasaan ramah lingkungan
+            Dengan EcoLearn, mari kita bangun kebiasaan ramah lingkungan.
           </p>
         </div>
       </div>
       <!-- Konten Utama -->
       <div>
-        <div class="container-fluid bg-success text-white p-5">
+        <div class="bg-content container-fluid text-white p-5">
           <div class="row align-items-center">
-            <!-- Kolom Kiri: Selamat Datang -->
-            <div class="col-md-6">
-              <h1 class="fw-bold">Halo, Selamat Datang!</h1>
-              <p>
-                Selamat datang di EcoLearn, platform yang memberikan edukasi
-                tentang gaya hidup ramah lingkungan.
-              </p>
-            </div>
+        <!-- Kolom Kiri: Gambar -->
+        <div class="col-md-6 text-center">
+          <img
+            src="assets/img/penanaman_pohon_individu_1.webp"
+            alt="EcoLearn Welcome"
+            class="img-fluid rounded shadow"
+          />
+        </div>
 
-            <!-- Kolom Kanan: Penjelasan EcoLearn -->
-            <div class="col-md-6 d-flex flex-column justify-content-center">
-              <h2 class="fw-bold">Apa itu EcoLearn?</h2>
-              <p>
-                EcoLearn adalah platform edukasi yang bertujuan untuk
-                meningkatkan kesadaran tentang pentingnya gaya hidup ramah
-                lingkungan. Kami menyediakan berbagai sumber belajar seperti
-                kalkulator jejak karbon, artikel edukasi, komunitas diskusi,
-                serta tips praktis untuk mengurangi dampak lingkungan. Dengan
-                EcoLearn, kita bisa belajar dan mengambil tindakan nyata demi
-                bumi yang lebih hijau.
-              </p>
-            </div>
+        <!-- Kolom Kanan: Penjelasan EcoLearn -->
+        <div class="col-md-6 d-flex flex-column justify-content-center">
+          <h2 class="fw-bold fs-4">Halo, Selamat Datang di EcoLearn!</h2>
+          <p class="fs-6"></p>
+            Temukan cara baru untuk hidup lebih ramah lingkungan bersama kami.
+          </p>
+          <h3 class="fw-bold fs-5 mt-4">Mengapa EcoLearn?</h3>
+          <p class="fs-6"></p>
+            EcoLearn adalah platform edukasi yang dirancang untuk membantu Anda
+            memahami pentingnya gaya hidup ramah lingkungan. Kami menyediakan:
+          </p>
+          <ul class="list-unstyled">
+            <li class="mb-2">
+          <i class="fa-solid fa-leaf text-white me-2"></i> Kalkulator Jejak Karbon
+            </li>
+            <li class="mb-2">
+          <i class="fa-solid fa-book text-white me-2"></i> Artikel Edukasi
+            </li>
+            <li class="mb-2">
+          <i class="fa-solid fa-lightbulb text-white me-2"></i> Tips Praktis
+            </li>
+          </ul>
+          <p class="fs-6 mt-2"></p>
+            Bersama EcoLearn, mari kita wujudkan bumi yang lebih hijau dan sehat!
+          </p>
+        </div>
           </div>
         </div>
       </div>
-    </main>
-    <footer class="bg-light text-dark pt-5 pb-4">
+      </div>
+    <footer class="bg-white text-dark pt-5 pb-4">
       <div class="container">
-        <div class="row align-items-center">
-          <!-- Kolom Kiri (EcoLearn & Deskripsi) -->
-          <div class="col-md-6">
-            <h5 class="fw-bold">EcoLearn</h5>
-            <p>
-              Platform edukasi untuk gaya hidup ramah lingkungan dan konservasi
-              alam.
-            </p>
-            <p class="text-muted">© 2025 EcoLearn - made with 💚</p>
-          </div>
+      <div class="row align-items-center m-1">
+      <!-- Kolom Kiri (EcoLearn & Deskripsi) -->
+      <div class="col-md-6 mb-4">
+      <h5 class="fw-bold text-uppercase">EcoLearn</h5>
+      <p class="text-muted">
+      Platform edukasi untuk gaya hidup ramah lingkungan dan konservasi
+      alam.
+      </p>
+      <p class="text-muted">© 2025 EcoLearn. All Rights Reserved.</p>
+      </div>
 
-          <!-- Kolom Kanan (Quote) -->
-          <div class="col-md-6">
-            <div>
-              <div class="card-header">Quote</div>
-              <div class="card-body">
-                <blockquote class="blockquote mb-0">
-                  <p>Trees are poems that the earth writes upon the sky</p>
-                  <footer class="blockquote-footer">
-                    Kahlil Gibran <cite title="Source Title"></cite>
-                  </footer>
-                </blockquote>
-              </div>
-            </div>
-          </div>
-        </div>
+      <!-- Kolom Kanan (Quote) -->
+      <div class="col-md-6">
+      <div class="custom-footer card text-white border-0 shadow">
+      <div class="card-header text-center fw-bold">Quote hari ini</div>
+      <div class="card-body">
+      <blockquote class="blockquote mb-0 text-center">
+      <p class="fs-5">
+      "Trees are poems that the earth writes upon the sky."
+      </p>
+      <footer class="blockquote-footer text-white mt-2">
+      Kahlil Gibran
+      </footer>
+      </blockquote>
+      </div>
+      </div>
+      </div>
+      </div>
+      <hr class="text-muted mt-4" />
       </div>
     </footer>
-    <script src="js/main.js"></script>
+    <script type="module" src="js/main.js"></script>
     <!-- CDN for Bootstrap -->
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

@@ -25,6 +25,7 @@ module.exports = {
     filename: "js/main.js", // Simpan file JS di dalam dist/js/
     path: path.resolve(__dirname, "dist"),
     clean: true, // Hapus file lama setiap build
+    assetModuleFilename: "img/[name][ext]", // Simpan semua asset (gambar) di dist/img/
   },
   devServer: {
     static: path.resolve(__dirname, "dist"),
@@ -38,10 +39,23 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, "css-loader"],
       },
       {
-        test: /\.(png|jpe?g|webp|gif)$/,
-        type: "asset/resource",
-        generator: {
-          filename: "img/[name][ext]", // Simpan gambar di dist/img/
+        test: /\.(png|jpe?g|webp|gif)$/i,
+        type: "asset/resource", // Proses semua gambar jadi file di output
+      },
+      {
+        test: /\.html$/i,
+        loader: "html-loader",
+        options: {
+          sources: {
+            list: [
+              "...",
+              {
+                tag: "img",
+                attribute: "src",
+                type: "src",
+              },
+            ],
+          },
         },
       },
     ],
@@ -51,6 +65,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "css/style.css", // Simpan CSS di dist/css/
     }),
+    // Opsional: tetap bisa dipakai kalau kamu ada file lain di folder img
     new CopyWebpackPlugin({
       patterns: [
         { from: "src/assets/img", to: "img" }, // Salin folder img ke dist/img/

@@ -1,5 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
-
+@import url(https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap);
 * {
   margin: 0;
   padding: 0;
@@ -28,7 +27,7 @@ html {
 
 /* Home */
 .background-image {
-  background-image: url("../assets/img/Lindungi-hutan.webp");
+  background-image: url(../img/Lindungi-hutan.webp);
   height: 100vh;
   background-size: cover;
   background-position: center;
@@ -47,7 +46,7 @@ a {
 }
 
 a:hover {
-  color: #045f50;
+  color: green;
 }
 
 /* Tips & Trick */
