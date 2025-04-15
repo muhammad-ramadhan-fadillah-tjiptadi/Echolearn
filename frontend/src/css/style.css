@@ -36,7 +36,7 @@ html {
 }
 
 /* Article */
-.main-content {
+.main-article {
   margin-top: 100px;
 }
 
@@ -51,6 +51,8 @@ a:hover {
 }
 
 /* Tips & Trick */
-
+.main-tips {
+  margin-top: 100px;
+}
 
 /* Kalkulator */
