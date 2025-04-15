@@ -35,7 +35,7 @@ html {
 }
 
 /* Article */
-.main-content {
+.main-article {
   margin-top: 100px;
 }
 
@@ -46,10 +46,10 @@ a {
 }
 
 a:hover {
-  color: green;
+  color: #045f50;
 }
 
 /* Tips & Trick */
-
-
-/* Kalkulator */
+.main-tips {
+  margin-top: 100px;
+}

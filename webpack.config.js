@@ -6,26 +6,29 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 
-// Membaca semua file HTML di dalam folder src
+// Path ke folder src di dalam folder frontend
+const srcPath = path.resolve(__dirname, "frontend", "src");
+
+// Membaca semua file HTML di dalam folder frontend/src
 const htmlFiles = fs
-  .readdirSync(path.resolve(__dirname, "src"))
+  .readdirSync(srcPath)
   .filter((file) => file.endsWith(".html"))
   .map(
     (file) =>
       new HtmlWebpackPlugin({
-        template: `./src/${file}`,
+        template: path.join(srcPath, file),
         filename: file, // Simpan dengan nama yang sama di dist/
       })
   );
 
 module.exports = {
   mode: "development",
-  entry: "./src/js/main.js",
+  entry: path.join(srcPath, "js", "main.js"),
   output: {
-    filename: "js/main.js", // Simpan file JS di dalam dist/js/
+    filename: "js/main.js",
     path: path.resolve(__dirname, "dist"),
-    clean: true, // Hapus file lama setiap build
-    assetModuleFilename: "img/[name][ext]", // Simpan semua asset (gambar) di dist/img/
+    clean: true,
+    assetModuleFilename: "img/[name][ext]",
   },
   devServer: {
     static: path.resolve(__dirname, "dist"),
@@ -40,7 +43,7 @@ module.exports = {
       },
       {
         test: /\.(png|jpe?g|webp|gif)$/i,
-        type: "asset/resource", // Proses semua gambar jadi file di output
+        type: "asset/resource",
       },
       {
         test: /\.html$/i,
@@ -61,18 +64,20 @@ module.exports = {
     ],
   },
   plugins: [
-    ...htmlFiles, // Gunakan semua file HTML yang ditemukan
+    ...htmlFiles,
     new MiniCssExtractPlugin({
-      filename: "css/style.css", // Simpan CSS di dist/css/
+      filename: "css/style.css",
     }),
-    // Opsional: tetap bisa dipakai kalau kamu ada file lain di folder img
     new CopyWebpackPlugin({
       patterns: [
-        { from: "src/assets/img", to: "img" }, // Salin folder img ke dist/img/
+        {
+          from: path.join(srcPath, "assets", "img"),
+          to: "img",
+        },
       ],
     }),
   ],
   resolve: {
-    extensions: [".js", ".css"], // Pastikan Webpack bisa menemukan file JS dan CSS
+    extensions: [".js", ".css"],
   },
 };
