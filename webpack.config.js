@@ -32,8 +32,9 @@ module.exports = {
   },
   devServer: {
     static: path.resolve(__dirname, "dist"),
-    port: 8080,
+    port: process.env.PORT || 8080,
     hot: true,
+    allowedHosts: 'all',
   },
   module: {
     rules: [
