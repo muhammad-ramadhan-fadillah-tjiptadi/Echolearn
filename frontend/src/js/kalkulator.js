@@ -35,10 +35,27 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    const watt = kapasitasAC * 745.7;
-    const emisi = (watt * unitAC * durasiAC * 30 * 0.7) / 1000;
-
-    resultSpanAC.textContent = emisi.toFixed(2);
+    fetch("http://localhost:3000/api/ac", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        unit: unitAC,
+        kapasitas: kapasitasAC,
+        durasi: durasiAC,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        resultSpanAC.textContent = data.emisi.toFixed(2);
+        animateResult(resultSpanAC);
+      })
+      .catch((err) => {
+        console.error("Gagal hitung AC:", err);
+        alert("Terjadi kesalahan saat menghitung AC.");
+      });
+    
 
     // Animasi hasil
     animateResult(resultSpanAC);
@@ -69,8 +86,26 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    const emisiListrik = daya * faktor;
-    resultSpanListrik.textContent = emisiListrik.toFixed(2);
+    fetch("http://localhost:3000/api/listrik", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        jaringan: jaringan,
+        daya: daya,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        resultSpanListrik.textContent = data.emisi.toFixed(2);
+        animateResult(resultSpanListrik);
+      })
+      .catch((err) => {
+        console.error("Gagal hitung listrik:", err);
+        alert("Terjadi kesalahan saat menghitung listrik.");
+      });
+    
 
     // Animasi hasil
     animateResult(resultSpanListrik);
@@ -107,8 +142,27 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    const emisiPeralatan = (watt * jumlah * durasi * 0.7) / 1000;
-    resultSpanPeralatan.textContent = emisiPeralatan.toFixed(2);
+    fetch("http://localhost:3000/api/peralatan", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        jenis: peralatan,
+        jumlah: jumlah,
+        durasi: durasi,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        resultSpanPeralatan.textContent = data.emisi.toFixed(2);
+        animateResult(resultSpanPeralatan);
+      })
+      .catch((err) => {
+        console.error("Gagal hitung alat:", err);
+        alert("Terjadi kesalahan saat menghitung peralatan.");
+      });
+    
 
     // Animasi hasil
     animateResult(resultSpanPeralatan);
