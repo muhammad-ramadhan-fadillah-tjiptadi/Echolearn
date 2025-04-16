@@ -1,0 +1,475 @@
+/* Reset dasar */
+* {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.custom-nav {
+  background-color: #045f50;
+}
+
+body {
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Halaman */
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Landing Page */
+.landing-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh;
+}
+
+.landing-header {
+  text-align: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.landing-header h1 {
+  font-size: 3rem;
+  color: #045f50;
+  margin-bottom: 1rem;
+  position: relative;
+  display: inline-block;
+}
+
+.landing-header h1::after {
+  content: "";
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 4px;
+  background-color: #045f50;
+  border-radius: 2px;
+}
+
+.eco-icon {
+  font-size: 4rem;
+  color: #045f50;
+  margin: 1rem 0;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.landing-info {
+  background-color: white;
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  width: 100%;
+  margin-bottom: 2rem;
+}
+
+.landing-info h2 {
+  color: #045f50;
+  margin-top: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.landing-info h2:first-child {
+  margin-top: 0;
+}
+
+.landing-info p {
+  margin-bottom: 1rem;
+  color: #555;
+  font-size: 1.1rem;
+}
+
+.cta-container {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.cta-button {
+  background-color: #045f50;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  border-radius: 50px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(4, 95, 80, 0.4);
+}
+
+.cta-button:hover {
+  background-color: #034238;
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(4, 95, 80, 0.6);
+}
+
+.cta-button:active {
+  transform: translateY(0);
+}
+
+.landing-footer {
+  margin-top: auto;
+  width: 100%;
+}
+
+.eco-facts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.fact {
+  background-color: white;
+  border-radius: 10px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  max-width: 350px;
+  transition: transform 0.3s ease;
+}
+
+.fact:hover {
+  transform: translateY(-5px);
+}
+
+.fact i {
+  font-size: 2rem;
+  color: #045f50;
+  margin-right: 1rem;
+}
+
+.fact p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Calculator Page */
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 1rem;
+}
+
+.back-button {
+  position: absolute;
+  left: 1rem;
+  background-color: transparent;
+  border: none;
+  color: #045f50;
+  font-size: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: color 0.3s ease;
+}
+
+.back-button:hover {
+  color: #034238;
+}
+
+header {
+  background-color: white;
+  padding: 1rem 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
+}
+
+.SumTitle {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #045f50;
+  margin: 0;
+}
+
+/* Section utama */
+.SumberBelajar {
+  text-align: center;
+  padding: 2rem;
+  background-color: #f5f5f5;
+  border-radius: 20px;
+  margin: 0 1rem 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.SumDesc {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Grid untuk kartu */
+.sumber-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.sumber-card {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.sumber-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+}
+
+.card-icon {
+  font-size: 2.5rem;
+  color: #045f50;
+  margin-bottom: 1rem;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sumber-card h3 {
+  color: #045f50;
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  position: relative;
+}
+
+.sumber-card h3::after {
+  content: "";
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 3px;
+  background-color: #045f50;
+  border-radius: 1.5px;
+}
+
+/* Form */
+form {
+  text-align: left;
+  margin-top: 1rem;
+}
+
+form label {
+  font-weight: 600;
+  color: #045f50;
+  display: block;
+  margin: 1rem 0 0.5rem;
+  font-size: 0.95rem;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #045f50;
+  box-shadow: 0 0 0 3px rgba(4, 95, 80, 0.2);
+}
+
+.calculate-button {
+  background-color: #045f50;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 600;
+  width: 100%;
+  margin-top: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.calculate-button:hover {
+  background-color: #034238;
+  transform: translateY(-2px);
+}
+
+.calculate-button:active {
+  transform: translateY(0);
+}
+
+/* Result */
+.result {
+  margin-top: 1.5rem;
+  padding: 1.5rem;
+  background-color: #e6f2f0;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.result h4 {
+  color: #045f50;
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.result p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.result span {
+  font-weight: bold;
+  color: #045f50;
+  font-size: 1.2rem;
+}
+
+/* Footer */
+footer {
+  background-color: #045f50;
+  color: white;
+  padding: 2rem;
+  margin-top: auto;
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer-content p {
+  margin-bottom: 0.5rem;
+}
+
+.footer-icons {
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+
+.footer-icons i {
+  margin: 0 0.5rem;
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+  .sumber-container {
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  }
+
+  .landing-header h1 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .landing-header h1 {
+    font-size: 2rem;
+  }
+
+  .eco-facts {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .fact {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .SumTitle {
+    font-size: 1.8rem;
+  }
+
+  .SumDesc {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .landing-header h1 {
+    font-size: 1.8rem;
+  }
+
+  .landing-info {
+    padding: 1.5rem;
+  }
+
+  .landing-info h2 {
+    font-size: 1.3rem;
+  }
+
+  .landing-info p {
+    font-size: 1rem;
+  }
+
+  .cta-button {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+
+  .SumTitle {
+    font-size: 1.5rem;
+  }
+
+  .SumDesc {
+    font-size: 0.9rem;
+  }
+
+  .sumber-container {
+    grid-template-columns: 1fr;
+  }
+
+  .sumber-card {
+    padding: 1.5rem;
+  }
+}

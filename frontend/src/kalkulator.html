@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalkulator</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <!-- CDN for Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- AOS Library -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <link rel="stylesheet" href="css/kalkulator.css" /> 
+  </head>
+  <body>
+    <header>
+      <nav class="custom-nav navbar navbar-expand-lg fixed-top border-bottom border-2">
+      <div class="container-fluid">
+        <!-- Logo di Kiri -->
+        <i class="fa-solid fa-leaf"></i>
+        <a class="navbar-brand ms-2 fw-semibold text-white" href="#"
+        >Ecolearn</a
+        >
+
+        <!-- Tombol Toggler untuk Mobile -->
+        <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+        >
+        <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar ke Kanan -->
+        <div
+        class="collapse navbar-collapse mt-1 me-5"
+        id="navbarNavDropdown"
+        >
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+          <a
+            class="nav-link active fw-semibold text-white"
+            aria-current="page"
+            href="index.html"
+            >Home</a
+          >
+          </li>
+          <li class="nav-item">
+          <a class="nav-link fw-semibold text-white" href="article.html"
+            >Article</a
+          >
+          </li>
+          <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle fw-semibold text-white"
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Fitur lain
+          </a>
+          <ul class="dropdown-menu">
+            <li>
+            <a class="dropdown-item fw-semibold" href="kalkulator.html"
+              >Kalkulator</a
+            >
+            </li>
+            <li>
+            <a class="dropdown-item fw-semibold" href="tips-trick.html"
+              >Tips and Trick</a
+            >
+            </li>
+          </ul>
+          </li>
+        </ul>
+        </div>
+      </div>
+      </nav>
+    </header>
+    <main>
+      <div id="landing-page" class="page">
+        <div class="landing-content">
+            <div class="landing-header">
+                <h1 data-aos="fade-up">Kalkulator Jejak Karbon</h1>
+                <div class="eco-icon">
+                    <i class="fa-solid fa-leaf"></i>
+                </div>
+            </div>
+            
+            <div class="landing-info">
+                <h2 data-aos="fade-up">Apa itu Jejak Karbon?</h2>
+                <p data-aos="fade-up">Jejak karbon adalah jumlah total emisi gas rumah kaca yang dihasilkan secara langsung atau tidak langsung oleh aktivitas manusia, produk, atau organisasi. Diukur dalam satuan kilogram karbon dioksida ekuivalen (kgCO₂e).</p>
+                
+                <h2 data-aos="fade-up">Mengapa Penting?</h2>
+                <p data-aos="fade-up">Menghitung jejak karbon membantu kita memahami dampak lingkungan dari aktivitas sehari-hari. Dengan mengetahui jejak karbon, kita dapat mengambil langkah untuk mengurangi emisi dan berkontribusi pada pelestarian lingkungan.</p>
+                
+                <h2 data-aos="fade-up">Cara Menggunakan Kalkulator</h2>
+                <p data-aos="fade-up">Kalkulator ini membantu Anda menghitung jejak karbon dari penggunaan AC, listrik berdasarkan wilayah, dan berbagai peralatan listrik. Cukup masukkan data yang diminta dan kalkulator akan menampilkan hasil perhitungan jejak karbon.</p>
+                
+                <div class="cta-container">
+                    <button id="start-button" class="cta-button" data-aos="fade-up">Mulai Hitung Jejak Karbon</button>
+                </div>
+            </div>
+            
+            <div class="landing-footer">
+                <div class="eco-facts">
+                    <div class="fact" data-aos="fade-left">
+                        <i class="fa-solid fa-lightbulb"></i>
+                        <p>Mengganti lampu dengan LED dapat mengurangi jejak karbon hingga 80%</p>
+                    </div>
+                    <div class="fact" data-aos="fade-left">
+                        <i class="fa-solid fa-temperature-low"></i>
+                        <p>Menurunkan suhu AC sebesar 1°C dapat menghemat energi hingga 10%</p>
+                    </div>
+                    <div class="fact" data-aos="fade-left">
+                        <i class="fa-solid fa-plug"></i>
+                        <p>Peralatan elektronik dalam mode standby masih mengkonsumsi 5-10% energi</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="calculator-page" class="page hidden">
+        <header>
+            <div class="header-container">
+                <button id="back-button" class="back-button"><i class="fa-solid fa-arrow-left"></i> Kembali</button>
+                <h1 class="SumTitle">Kalkulator Jejak Karbon</h1>
+            </div>
+        </header>
+
+        <section class="SumberBelajar">
+            <h3 class="SumDesc">Pilih kategori untuk menghitung jejak karbon Anda</h3>
+            <div class="sumber-container">
+            <!-- Card  -->
+                <div class="sumber-card">
+                    <div class="card-icon">
+                        <i class="fa-solid fa-fan"></i>
+                    </div>
+                    <h3>Air Conditioner</h3>
+                    <form action="">
+                        <label for="unit">Jumlah Unit AC</label>
+                        <input type="number" id="unit" name="unit" placeholder="Jumlah Unit AC">
+                        
+                        <label for="kapasitas">Kapasitas AC (PK)</label>
+                        <select name="kapasitas" id="kapasitas">
+                            <option value="0.5">0.5 PK</option>
+                            <option value="0.75">0.75 PK</option>
+                            <option value="1">1 PK</option>
+                            <option value="1.5">1.5 PK</option>
+                            <option value="2">2 PK</option>
+                            <option value="2.5">2.5 PK</option>
+                            <option value="3">3 PK</option>
+                        </select>
+                        
+                        <label for="durasi-ac">Durasi Penggunaan (Jam/Hari)</label>
+                        <input type="number" id="durasi-ac" name="durasi-ac" placeholder="Durasi Penggunaan AC">
+                        <button type="button" class="calculate-button">Hitung Jejak Karbon</button>
+                    </form>
+                    <div class="result">
+                        <h4>Hasil Perhitungan</h4>
+                        <p>Jejak Karbon: <span id="result-ac">0</span> kgCO₂e</p>
+                    </div>
+                </div>
+            
+                <div class="sumber-card">
+                    <div class="card-icon">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h3>Penggunaan Listrik Wilayah</h3>
+                    <form action="">
+                        <label for="jaringan">Jaringan Listrik</label>
+                        <select name="jaringan" id="jaringan">
+                            <option value="Sumatra">Sumatra</option>
+                            <option value="Jawa">Jawa</option>
+                            <option value="Kalimantan">Kalimantan</option>
+                            <option value="Sulawesi">Sulawesi</option>
+                            <option value="Papua">Papua</option>
+                        </select>
+                        
+                        <label for="daya">Batas Daya (VA)</label>
+                        <input type="number" id="daya" name="daya" placeholder="Batas Daya">
+                        <button type="button" class="calculate-button">Hitung Jejak Karbon</button>
+                    </form>
+                    <div class="result">
+                        <h4>Hasil Perhitungan</h4>
+                        <p>Jejak Karbon: <span id="result-wila">0</span> kgCO₂e</p>
+                    </div>
+                </div>
+        
+                <div class="sumber-card">
+                    <div class="card-icon">
+                        <i class="fa-solid fa-plug"></i>
+                    </div>
+                    <h3>Peralatan Listrik</h3>
+                    <form action="">
+                        <label for="peralatan">Jenis Peralatan</label>
+                        <select name="peralatan" id="peralatan">
+                            <option value="Dispenser">Dispenser (350 W)</option>
+                            <option value="Kipas Angin">Kipas Angin (103 W)</option>
+                            <option value="Komputer">Komputer (250 W)</option>
+                            <option value="Laptop">Laptop (100 W)</option>
+                            <option value="Kulkas">Kulkas (250 W)</option>
+                            <option value="Printer">Printer (200 W)</option>
+                            <option value="Microwave">Microwave (1000 W)</option>
+                            <option value="Rice Cooker">Rice Cooker (200 W)</option>
+                            <option value="Mesin Photocopy">Mesin Photocopy (900 W)</option>
+                        </select>
+                        
+                        <label for="jumlah">Jumlah Peralatan</label>
+                        <input type="number" id="jumlah" name="jumlah" placeholder="Jumlah Peralatan">
+                        
+                        <label for="durasi">Durasi Penggunaan (Jam/Hari)</label>
+                        <input type="number" id="durasi" name="durasi" placeholder="Durasi Penggunaan">
+                        <button type="button" class="calculate-button">Hitung Jejak Karbon</button>
+                    </form>
+                    <div class="result">
+                        <h4>Hasil Perhitungan</h4>
+                        <p>Jejak Karbon: <span id="result-alat">0</span> kgCO₂e</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="js/kalkulator.js"></script>
+
+    <!-- AOS Initialization -->
+    <script>
+      AOS.init({
+        duration: 1000,
+        easing: 'ease-in-out',
+        once: true, // Efek animasi hanya sekali
+      });
+    </script>
+  </body>
+</html>
