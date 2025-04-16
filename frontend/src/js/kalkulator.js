@@ -35,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    fetch("http://localhost:3000/api/ac", {
+    fetch("https://echolearn-production-5dd5.up.railway.app/api/ac", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -55,9 +55,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error("Gagal hitung AC:", err);
         alert("Terjadi kesalahan saat menghitung AC.");
       });
-    
 
-    // Animasi hasil
     animateResult(resultSpanAC);
   });
 
@@ -68,25 +66,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const resultSpanListrik = document.getElementById("result-wila");
   const hitungButtonListrik = listrikForm.querySelector("button");
 
-  const faktorEmisi = {
-    Jawa: 0.87,
-    Sumatra: 0.84,
-    Kalimantan: 0.89,
-    Sulawesi: 0.83,
-    Papua: 0.81,
-  };
-
   hitungButtonListrik.addEventListener("click", () => {
     const jaringan = jaringanSelect.value;
     const daya = Number.parseFloat(dayaInput.value.trim()) || 0;
-    const faktor = faktorEmisi[jaringan] || 0;
 
     if (daya <= 0 || isNaN(daya)) {
       alert("Mohon isi batas daya dengan benar");
       return;
     }
 
-    fetch("http://localhost:3000/api/listrik", {
+    fetch("https://echolearn-production-5dd5.up.railway.app/api/listrik", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -105,9 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error("Gagal hitung listrik:", err);
         alert("Terjadi kesalahan saat menghitung listrik.");
       });
-    
 
-    // Animasi hasil
     animateResult(resultSpanListrik);
   });
 
@@ -119,30 +106,17 @@ document.addEventListener("DOMContentLoaded", () => {
   const resultSpanPeralatan = document.getElementById("result-alat");
   const hitungButtonPeralatan = peralatanForm.querySelector("button");
 
-  const dayaPeralatan = {
-    Dispenser: 350,
-    "Kipas Angin": 103,
-    Komputer: 250,
-    Laptop: 100,
-    Kulkas: 250,
-    Printer: 200,
-    Microwave: 1000,
-    "Rice Cooker": 200,
-    "Mesin Photocopy": 900,
-  };
-
   hitungButtonPeralatan.addEventListener("click", () => {
     const peralatan = peralatanSelect.value;
     const jumlah = Number.parseFloat(jumlahInput.value.trim()) || 0;
     const durasi = Number.parseFloat(durasiPeralatanInput.value.trim()) || 0;
-    const watt = dayaPeralatan[peralatan] || 0;
 
     if (jumlah <= 0 || isNaN(jumlah) || durasi <= 0 || isNaN(durasi)) {
       alert("Mohon isi semua data dengan benar");
       return;
     }
 
-    fetch("http://localhost:3000/api/peralatan", {
+    fetch("https://echolearn-production-5dd5.up.railway.app/api/peralatan", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -162,9 +136,7 @@ document.addEventListener("DOMContentLoaded", () => {
         console.error("Gagal hitung alat:", err);
         alert("Terjadi kesalahan saat menghitung peralatan.");
       });
-    
 
-    // Animasi hasil
     animateResult(resultSpanPeralatan);
   });
 
