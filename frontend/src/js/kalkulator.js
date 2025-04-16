@@ -26,11 +26,11 @@ document.addEventListener("DOMContentLoaded", () => {
   const hitungButtonAC = acForm.querySelector("button");
 
   hitungButtonAC.addEventListener("click", () => {
-    const unitAC = Number.parseFloat(unitInput.value) || 0;
+    const unitAC = Number.parseFloat(unitInput.value.trim()) || 0;
     const kapasitasAC = Number.parseFloat(kapasitasSelect.value) || 0;
-    const durasiAC = Number.parseFloat(durasiInput.value) || 0;
+    const durasiAC = Number.parseFloat(durasiInput.value.trim()) || 0;
 
-    if (unitAC <= 0 || kapasitasAC <= 0 || durasiAC <= 0) {
+    if (unitAC <= 0 || isNaN(unitAC) || kapasitasAC <= 0 || isNaN(kapasitasAC) || durasiAC <= 0 || isNaN(durasiAC)) {
       alert("Mohon isi semua data dengan benar");
       return;
     }
@@ -45,7 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Kalkulator Penggunaan Listrik Wilayah
-  const listrikForm = document.getElementById("daya").closest("form");
+  const listrikForm = document.querySelector(".sumber-card:nth-child(2) form");
   const jaringanSelect = document.getElementById("jaringan");
   const dayaInput = document.getElementById("daya");
   const resultSpanListrik = document.getElementById("result-wila");
@@ -61,10 +61,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
   hitungButtonListrik.addEventListener("click", () => {
     const jaringan = jaringanSelect.value;
-    const daya = Number.parseFloat(dayaInput.value) || 0;
+    const daya = Number.parseFloat(dayaInput.value.trim()) || 0;
     const faktor = faktorEmisi[jaringan] || 0;
 
-    if (daya <= 0) {
+    if (daya <= 0 || isNaN(daya)) {
       alert("Mohon isi batas daya dengan benar");
       return;
     }
@@ -77,7 +77,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Kalkulator Peralatan Listrik
-  const peralatanForm = document.getElementById("peralatan").closest("form");
+  const peralatanForm = document.querySelector(".sumber-card:nth-child(3) form");
   const peralatanSelect = document.getElementById("peralatan");
   const jumlahInput = document.getElementById("jumlah");
   const durasiPeralatanInput = document.getElementById("durasi");
@@ -98,11 +98,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   hitungButtonPeralatan.addEventListener("click", () => {
     const peralatan = peralatanSelect.value;
-    const jumlah = Number.parseFloat(jumlahInput.value) || 0;
-    const durasi = Number.parseFloat(durasiPeralatanInput.value) || 0;
+    const jumlah = Number.parseFloat(jumlahInput.value.trim()) || 0;
+    const durasi = Number.parseFloat(durasiPeralatanInput.value.trim()) || 0;
     const watt = dayaPeralatan[peralatan] || 0;
 
-    if (jumlah <= 0 || durasi <= 0) {
+    if (jumlah <= 0 || isNaN(jumlah) || durasi <= 0 || isNaN(durasi)) {
       alert("Mohon isi semua data dengan benar");
       return;
     }

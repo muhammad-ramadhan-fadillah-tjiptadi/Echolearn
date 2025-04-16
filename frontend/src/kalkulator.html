@@ -10,6 +10,9 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <!-- CDN for Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -17,7 +20,11 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="css/kalkulator.css" />
+    <!-- AOS Library -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+
+    <link rel="stylesheet" href="css/kalkulator.css" /> 
   </head>
   <body>
     <header>
@@ -93,38 +100,38 @@
       <div id="landing-page" class="page">
         <div class="landing-content">
             <div class="landing-header">
-                <h1>Kalkulator Jejak Karbon</h1>
+                <h1 data-aos="fade-up">Kalkulator Jejak Karbon</h1>
                 <div class="eco-icon">
                     <i class="fa-solid fa-leaf"></i>
                 </div>
             </div>
             
             <div class="landing-info">
-                <h2>Apa itu Jejak Karbon?</h2>
-                <p>Jejak karbon adalah jumlah total emisi gas rumah kaca yang dihasilkan secara langsung atau tidak langsung oleh aktivitas manusia, produk, atau organisasi. Diukur dalam satuan kilogram karbon dioksida ekuivalen (kgCO₂e).</p>
+                <h2 data-aos="fade-up">Apa itu Jejak Karbon?</h2>
+                <p data-aos="fade-up">Jejak karbon adalah jumlah total emisi gas rumah kaca yang dihasilkan secara langsung atau tidak langsung oleh aktivitas manusia, produk, atau organisasi. Diukur dalam satuan kilogram karbon dioksida ekuivalen (kgCO₂e).</p>
                 
-                <h2>Mengapa Penting?</h2>
-                <p>Menghitung jejak karbon membantu kita memahami dampak lingkungan dari aktivitas sehari-hari. Dengan mengetahui jejak karbon, kita dapat mengambil langkah untuk mengurangi emisi dan berkontribusi pada pelestarian lingkungan.</p>
+                <h2 data-aos="fade-up">Mengapa Penting?</h2>
+                <p data-aos="fade-up">Menghitung jejak karbon membantu kita memahami dampak lingkungan dari aktivitas sehari-hari. Dengan mengetahui jejak karbon, kita dapat mengambil langkah untuk mengurangi emisi dan berkontribusi pada pelestarian lingkungan.</p>
                 
-                <h2>Cara Menggunakan Kalkulator</h2>
-                <p>Kalkulator ini membantu Anda menghitung jejak karbon dari penggunaan AC, listrik berdasarkan wilayah, dan berbagai peralatan listrik. Cukup masukkan data yang diminta dan kalkulator akan menampilkan hasil perhitungan jejak karbon.</p>
+                <h2 data-aos="fade-up">Cara Menggunakan Kalkulator</h2>
+                <p data-aos="fade-up">Kalkulator ini membantu Anda menghitung jejak karbon dari penggunaan AC, listrik berdasarkan wilayah, dan berbagai peralatan listrik. Cukup masukkan data yang diminta dan kalkulator akan menampilkan hasil perhitungan jejak karbon.</p>
                 
                 <div class="cta-container">
-                    <button id="start-button" class="cta-button">Mulai Hitung Jejak Karbon</button>
+                    <button id="start-button" class="cta-button" data-aos="fade-up">Mulai Hitung Jejak Karbon</button>
                 </div>
             </div>
             
             <div class="landing-footer">
                 <div class="eco-facts">
-                    <div class="fact">
+                    <div class="fact" data-aos="fade-left">
                         <i class="fa-solid fa-lightbulb"></i>
                         <p>Mengganti lampu dengan LED dapat mengurangi jejak karbon hingga 80%</p>
                     </div>
-                    <div class="fact">
+                    <div class="fact" data-aos="fade-left">
                         <i class="fa-solid fa-temperature-low"></i>
                         <p>Menurunkan suhu AC sebesar 1°C dapat menghemat energi hingga 10%</p>
                     </div>
-                    <div class="fact">
+                    <div class="fact" data-aos="fade-left">
                         <i class="fa-solid fa-plug"></i>
                         <p>Peralatan elektronik dalam mode standby masih mengkonsumsi 5-10% energi</p>
                     </div>
@@ -231,19 +238,9 @@
                         <p>Jejak Karbon: <span id="result-alat">0</span> kgCO₂e</p>
                     </div>
                 </div>
-            </div
+            </div>
         </section>
     </main>
     <script src="js/kalkulator.js"></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
-      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
-      crossorigin="anonymous"
-    ></script>
   </body>
 </html>
