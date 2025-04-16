@@ -1,0 +1,1 @@
+(()=>{"use strict";document.addEventListener("DOMContentLoaded",(function(){const e=document.querySelectorAll(".scroll-reveal");function n(){const n=window.innerHeight;e.forEach((e=>{e.getBoundingClientRect().top<n-100&&e.classList.add("revealed")}))}window.addEventListener("scroll",n),n()}))})();
