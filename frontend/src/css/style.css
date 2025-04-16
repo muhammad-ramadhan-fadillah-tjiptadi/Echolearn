@@ -21,11 +21,6 @@ html {
   background-color: #045f50;
 }
 
-/* Footer */
-.custom-footer {
-  background-color: #045f50;
-}
-
 /* Home */
 .background-image {
   background-image: url("../assets/img/Lindungi-hutan.webp");
@@ -50,9 +45,30 @@ a:hover {
   color: #045f50;
 }
 
+/* Footer */
+.custom-footer {
+  background-color: #045f50;
+}
+
 /* Tips & Trick */
 .main-tips {
   margin-top: 100px;
 }
 
-/* Kalkulator */
+/* Kalkulator */     
+
+/* Animasi Fade Up */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-delay] {
+  transition-delay: var(--delay);
+}
