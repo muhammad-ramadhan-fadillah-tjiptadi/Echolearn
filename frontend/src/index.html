@@ -11,6 +11,10 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <script src="https://unpkg.com/feather-icons"> 
+    </script>
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
@@ -19,6 +23,7 @@
       referrerpolicy="no-referrer"
     />
     <link rel="stylesheet" href="../src/css/style.css" />
+    <link rel="stylesheet" href="../src/css/mision.css" />
   </head>
   <body>
     <header>
@@ -103,6 +108,7 @@
         </div>
       </div>
       <!-- Konten Utama -->
+      <div class="bg-content container-fluid text-white p-5 scroll-reveal">
       <div>
         <div class="bg-content container-fluid text-white p-5">
           <div class="row align-items-center">
@@ -110,9 +116,11 @@
         <div class="col-md-6 text-center">
           <img
             src="assets/img/penanaman_pohon_individu_1.webp"
+            
             alt="EcoLearn Welcome"
             class="img-fluid rounded shadow"
           />
+          </>
         </div>
 
         <!-- Kolom Kanan: Penjelasan EcoLearn -->
@@ -145,9 +153,51 @@
         </div>
       </div>
       </div>
+      <!--Mission-->
+      <section class="mission">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge"><p1>VISI MISI</p1></div>
+                <h2>Membantu Anda</h2>
+                <p1>test</p1>
+            </div>
+            <div class="cards-grid">
+                <div class="card">
+                    <div class="card-icon">
+                        <i data-feather="refresh-cw"></i>
+                    </div>
+                    <h3>1</h3>
+                    <p1>test</p1>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <i data-feather="droplet"></i>
+                    </div>
+                    <h3>2</h3>
+                    <p1>test</p1>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <i data-feather="wind"></i>
+                    </div>
+                    <h3>3</h3>
+                    <p1>test</p1>
+                </div>
+                <div class="card">
+                    <div class="card-icon">
+                        <i data-feather="leaf"></i>
+                    </div>
+                    <h3>4</h3>
+                    <p1>test</p1>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer class="bg-white text-dark pt-5 pb-4">
-      <div class="container">
+      <div class="container ">
       <div class="row align-items-center m-1">
+
       <!-- Kolom Kiri (EcoLearn & Deskripsi) -->
       <div class="col-md-6 mb-4">
       <h5 class="fw-bold text-uppercase">EcoLearn</h5>
@@ -190,5 +240,23 @@
       integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
       crossorigin="anonymous"
     ></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const reveals = document.querySelectorAll(".scroll-reveal");
+    
+        function revealOnScroll() {
+          const windowHeight = window.innerHeight;
+          reveals.forEach((el) => {
+            const elementTop = el.getBoundingClientRect().top;
+            if (elementTop < windowHeight - 100) {
+              el.classList.add("revealed");
+            }
+          });
+        }
+    
+        window.addEventListener("scroll", revealOnScroll);
+        revealOnScroll(); // Run once on load
+      });
+    </script>
   </body>
 </html>
