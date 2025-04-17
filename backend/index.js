@@ -1,5 +1,5 @@
 const express = require("express");
-const cors = require("cors"); // ← Tambahkan ini
+const cors = require('cors'); // ← Tambahkan ini
 
 const app = express();
 
@@ -64,10 +64,6 @@ app.post("/api/peralatan", (req, res) => {
 
   const emisi = (watt * jumlah * durasi * 0.7) / 1000;
   res.json({ emisi });
-});
-
-app.get("/", (req, res) => {
-  res.send("Halo dari API Echolearn! 🎉");
 });
 
 
