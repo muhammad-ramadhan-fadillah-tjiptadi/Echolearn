@@ -66,6 +66,11 @@ app.post("/api/peralatan", (req, res) => {
   res.json({ emisi });
 });
 
+app.get("/", (req, res) => {
+  res.send("Halo dari API Echolearn! 🎉");
+});
+
+
 // Start server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
