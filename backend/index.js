@@ -1,19 +1,12 @@
-"use strict";
-
 const express = require("express");
-const cors = require("cors");
-const path = require("path");
+const cors = require('cors'); // ← Tambahkan ini
 
 const app = express();
-const PORT = process.env.PORT || 3000;
 
-// Middleware
-app.use(cors());
+app.use(cors()); // ← Izinkan akses dari origin lain
 app.use(express.json());
 
-// ====== API Routes ======
-
-// Hitung Emisi dari AC
+// API: Hitung Emisi dari AC
 app.post("/api/ac", (req, res) => {
   const { unit, kapasitas, durasi } = req.body;
 
@@ -26,7 +19,7 @@ app.post("/api/ac", (req, res) => {
   res.json({ emisi });
 });
 
-// Hitung Emisi Listrik Wilayah
+// API: Hitung Emisi Listrik Wilayah
 app.post("/api/listrik", (req, res) => {
   const { jaringan, daya } = req.body;
 
@@ -47,7 +40,7 @@ app.post("/api/listrik", (req, res) => {
   res.json({ emisi });
 });
 
-// Hitung Emisi Peralatan Listrik
+// API: Hitung Emisi Peralatan Listrik
 app.post("/api/peralatan", (req, res) => {
   const { jenis, jumlah, durasi } = req.body;
 
@@ -73,15 +66,11 @@ app.post("/api/peralatan", (req, res) => {
   res.json({ emisi });
 });
 
-// ====== Serve Frontend (dist) ======
-app.use(express.static(path.resolve(__dirname, "../dist")));
-
-// Untuk semua route non-API, arahkan ke index.html (SPA)
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "../dist/index.html"));
+const PORT = process.env.PORT || 3000;
+app.get('/', (req, res) => {
+  res.send('Hello from Echolearn API!');
 });
-
 // Start server
 app.listen(PORT, () => {
-  console.log(`🚀 API & Frontend Server running at http://localhost:${PORT}`);
+  console.log(`🚀 API server running on port ${PORT}`);
 });
