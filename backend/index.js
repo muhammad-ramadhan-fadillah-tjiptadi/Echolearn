@@ -74,5 +74,5 @@ app.get("/", (req, res) => {
 // Start server
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
-  console.log(`🚀 API server running at http://localhost:${PORT}`);
+  console.log(`🚀 API server running on port ${PORT}`);
 });
