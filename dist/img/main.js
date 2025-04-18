@@ -1,1 +1,0 @@
-import"../css/style.css";import"../css/mision.css";import"../css/kalkulator.css";document.addEventListener("DOMContentLoaded",(function(){const e=document.querySelectorAll(".scroll-reveal");function t(){const t=window.innerHeight;e.forEach((e=>{e.getBoundingClientRect().top<t-100&&e.classList.add("revealed")}))}window.addEventListener("scroll",t),t()}));

@@ -1,1 +1,20 @@
-(()=>{"use strict";document.addEventListener("DOMContentLoaded",(function(){const e=document.querySelectorAll(".scroll-reveal");function n(){const n=window.innerHeight;e.forEach((e=>{e.getBoundingClientRect().top<n-100&&e.classList.add("revealed")}))}window.addEventListener("scroll",n),n()}))})();
+/******/ (() => { // webpackBootstrap
+document.addEventListener("DOMContentLoaded", function () {
+    const reveals = document.querySelectorAll(".scroll-reveal");
+  
+    function revealOnScroll() {
+      const windowHeight = window.innerHeight;
+      reveals.forEach((el) => {
+        const elementTop = el.getBoundingClientRect().top;
+        if (elementTop < windowHeight - 100) {
+          el.classList.add("revealed");
+        }
+      });
+    }
+  
+    window.addEventListener("scroll", revealOnScroll);
+    revealOnScroll(); // Run once on load
+  });
+
+/******/ })()
+;

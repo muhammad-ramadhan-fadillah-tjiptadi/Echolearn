@@ -1,9 +1,9 @@
 {
   "name": "echolearn",
   "version": "1.0.0",
-  "main": "backend/index.js",
+  "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "webpack serve",
     "build": "webpack build --mode=production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -21,8 +21,10 @@
   "description": "",
   "devDependencies": {
     "autoprefixer": "^10.4.21",
+    "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^13.0.0",
     "css-loader": "^7.1.2",
+    "glob": "^11.0.1",
     "html-loader": "^5.1.0",
     "html-webpack-plugin": "^5.6.3",
     "mini-css-extract-plugin": "^2.9.2",
@@ -37,7 +39,6 @@
   "dependencies": {
     "@popperjs/core": "^2.11.8",
     "aos": "^2.3.4",
-    "bootstrap": "^5.3.3",
-    "cors": "^2.8.5"
+    "bootstrap": "^5.3.3"
   }
 }

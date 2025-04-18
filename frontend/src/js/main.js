@@ -1,7 +1,3 @@
-import "../css/style.css";
-import "../css/mision.css";
-import "../css/kalkulator.css";
-
 document.addEventListener("DOMContentLoaded", function () {
     const reveals = document.querySelectorAll(".scroll-reveal");
   
