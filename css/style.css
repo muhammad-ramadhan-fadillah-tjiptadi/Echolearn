@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Open Sans', sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Navbar */
+.custom-nav {
+  background-color: #045f50;
+}
+
+/* Background content */
+.bg-content {
+  background-color: #045f50;
+}
+
+/* Home */
+.background-image {
+  background-image: url("../assets/img/Lindungi-hutan.webp");
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+  font-size: larger;
+}
+
+/* Article */
+.main-article {
+  margin-top: 100px;
+}
+
+a {
+  text-decoration: none;
+  font-family: 'Lora' serif;
+  color: black;
+}
+
+a:hover {
+  color: #045f50;
+}
+
+/* Footer */
+.custom-footer {
+  background-color: #045f50;
+}
+
+/* Tips & Trick */
+.main-tips {
+  margin-top: 100px;
+}
+
+/* Kalkulator */     
+
+/* Animasi Fade Up */
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+[data-delay] {
+  transition-delay: var(--delay);
+}
