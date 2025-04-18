@@ -15,37 +15,33 @@ const htmlFiles = fs
   .readdirSync(frontendPath)
   .filter((file) => file.endsWith(".html"))
   .map((file) => {
-    // Tentukan chunks berdasarkan nama file HTML
     let chunks = [];
     if (file === "index.html") {
       chunks = ["main"];
     } else if (file === "kalkulator.html") {
       chunks = ["kalkulator"];
     }
-    // File HTML lain tidak memiliki JS sendiri
 
     return new HtmlWebpackPlugin({
       template: path.join(frontendPath, file),
       filename: file,
       chunks: chunks,
-      minify: false, // Nonaktifkan minify
-      // Penting: Gunakan publicPath relatif untuk HtmlWebpackPlugin
-      publicPath: "./",
+      minify: false,
+      publicPath: "/Echolearn/", // Disesuaikan untuk GitHub Pages
     });
   });
 
 module.exports = {
-  mode: "development",
+  mode: "production",
   entry: {
-    // Hanya dua file JS yang kita perlukan
     main: path.join(frontendPath, "src", "js", "main.js"),
     kalkulator: path.join(frontendPath, "src", "js", "kalkulator.js"),
   },
   output: {
     filename: "js/[name].js",
     path: path.resolve(__dirname, "dist"),
-    clean: false, // PENTING: Diubah ke false, biarkan CleanWebpackPlugin menangani ini
-    publicPath: "./", // Ubah ke relatif path dengan './'
+    clean: false,
+    publicPath: "/Echolearn/", // Ini penting agar GitHub Pages bisa resolve path dengan benar
   },
   devServer: {
     static: path.resolve(__dirname, "dist"),
@@ -55,11 +51,9 @@ module.exports = {
   },
   module: {
     rules: [
-      // Rule untuk CSS yang diproses melalui webpack
       {
         test: /\.css$/,
         exclude: [
-          // Kecualikan CSS yang ingin disalin langsung
           path.join(frontendPath, "src", "css", "kalkulator.css"),
           path.join(frontendPath, "src", "css", "mision.css"),
           path.join(frontendPath, "src", "css", "style.css"),
@@ -68,18 +62,17 @@ module.exports = {
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              publicPath: "../", // Path relatif untuk asset dalam CSS
+              publicPath: "../",
             },
           },
           {
             loader: "css-loader",
             options: {
-              url: true, // Aktifkan resolusi URL
+              url: true,
             },
           },
         ],
       },
-      // Rule khusus untuk CSS yang ingin disalin langsung tanpa diproses
       {
         test: /\.(css)$/,
         include: [
@@ -92,20 +85,18 @@ module.exports = {
           filename: "css/[name][ext]",
         },
       },
-      // Proses gambar
       {
         test: /\.(png|jpe?g|webp|gif|svg)$/i,
         type: "asset/resource",
         generator: {
-          filename: "assets/img/[name][ext]", // Simpan gambar hanya dalam folder assets/img
+          filename: "assets/img/[name][ext]",
         },
       },
-      // HTML processing
       {
         test: /\.html$/i,
         loader: "html-loader",
         options: {
-          minimize: false, // Jangan minimize HTML
+          minimize: false,
           sources: {
             list: [
               {
@@ -117,8 +108,7 @@ module.exports = {
                 tag: "link",
                 attribute: "href",
                 type: "src",
-                filter: (tag, attribute, attributes, resourcePath) => {
-                  // Abaikan link stylesheet yang spesifik
+                filter: (tag, attribute, attributes) => {
                   if (
                     attributes.rel &&
                     attributes.rel.value === "stylesheet" &&
@@ -144,13 +134,11 @@ module.exports = {
     }),
     new CopyWebpackPlugin({
       patterns: [
-        // Hanya salin folder src/assets/img ke dist/assets/img
         {
           from: path.join(frontendPath, "src", "assets", "img"),
-          to: "assets/img", // Folder img akan masuk ke dalam dist/assets/img
+          to: "assets/img",
           noErrorOnMissing: true,
         },
-        // Salin file CSS tertentu tanpa mengubah kontennya
         {
           from: path.join(frontendPath, "src", "css", "kalkulator.css"),
           to: "css/kalkulator.css",
@@ -162,10 +150,8 @@ module.exports = {
         {
           from: path.join(frontendPath, "src", "css", "style.css"),
           to: "css/style.css",
-          // Opsional: Transform untuk memperbaiki path di dalam CSS
           transform(content) {
             let contentStr = content.toString();
-            // Ganti semua URL absolut ke relatif jika perlu
             contentStr = contentStr.replace(
               /url\(['"]?\/img\//g,
               "url('../img/"
@@ -175,27 +161,26 @@ module.exports = {
         },
       ],
     }),
+    // new CleanWebpackPlugin(),
   ],
   resolve: {
     extensions: [".js", ".css"],
     alias: {
-      // Tambahkan alias untuk memudahkan import
       "@img": path.resolve(__dirname, "frontend/img"),
       "@css": path.resolve(__dirname, "frontend/src/css"),
       "@js": path.resolve(__dirname, "frontend/src/js"),
     },
   },
-  // Nonaktifkan pembagian dan optimization untuk mencegah file tambahan
   optimization: {
     runtimeChunk: false,
     splitChunks: {
       cacheGroups: {
-        default: false, // Matikan default cache groups
+        default: false,
       },
     },
-    minimize: false, // Nonaktifkan minifikasi
+    minimize: false,
   },
   performance: {
-    hints: false, // Matikan peringatan performa
+    hints: false,
   },
 };
